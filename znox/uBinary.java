@@ -9,17 +9,27 @@ public class uBinary {
     // Example
     public static void main(String args[]) {
         // Boolean variable (don't need create this)
-        boolean boo = false;
+        boolean boo = true;
 
         if (boo) {
             // Create new variable of uBinary class
             uBinary format = new uBinary(); // If you prefer declare UUID in construct = new uBinarry(UUID...);
 
-            format.setUUID(UUID.randomUUID()); // Declare uuid variable
+            List<UUID> uuids = new ArrayList<UUID>();
+            for (int i = 0; i < 2; i++) {
+                uuids.add(UUID.randomUUID());
+            }
+
+            format.setUUIDs(uuids); // Declare uuid variable
 
             format.convertToBinary(); // Convert UUID to binary number
 
-            System.out.println(format.write()); // Use method .write() to return formatted binary number with your changes
+            System.out.println("Formatted: " + format.write()); // Use method .write() to return formatted binary number with your changes
+        } else {
+            // Convert without new variable
+            System.out.println("Formatted: " +
+                    new uBinary(UUID.randomUUID()).convertToBinary().write()
+            );
         }
     }
 
