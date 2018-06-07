@@ -1,4 +1,4 @@
-package znox;
+package will;
 
 import java.util.ArrayList;
 import java.util.List;
